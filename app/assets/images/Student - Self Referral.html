@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0051)https://www.myinterfase.com/utahr/SelfReferral.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Student - Self Referral</title>
+    <script async="" src="./Student - Self Referral_files/bacon.min.js"></script><script type="text/javascript">
+	function ShowDocPicker(object, object_id, tag)
+	{ 
+		//set default
+		w = 800; h = 600;	
+		if (document.all || document.layers || document.getElementById) 
+		{ 
+			w = screen.availWidth;
+			h = screen.availHeight; 
+		}
+				
+		var popW = 400, popH = 300; 
+		
+		var leftPos = (w-popW)/2-12, topPos = (h-popH)/2+24; 
+		window.name = 'Select Documents'; 
+		strURL = 'document_selection.aspx?o=' + object + '&o_id=' + object_id + "&tag=" + tag;
+		strProp = 'height='+popH+',width='+popW+',fullscreen=0,toolbar=0,top='+topPos+',left='+leftPos+',directories=0,status=0,menuBar=0,scrollBars=1,resizable=1';
+		winCards = window.open(strURL,'Cards',strProp); 
+		MakeModal(); 
+		winCards.focus(); 
+	}
+
+	function activateModal(){
+		winCards.focus();
+	}
+
+
+	function MakeModal(){
+		window.onfocus = activateModal;
+	}
+
+
+	function CloseWin(){
+		if (winCards.closed){
+			window.onfocus = null;
+			window.focus();
+		}
+	}
+
+	function RemoveModal(){
+		setTimeout("CloseWin()",100);
+	}
+	
+	//Show the window
+	function ShowDocDialog(radDialog, object, object_id, profile_id, reload)
+	{					
+		try
+		{
+            var previousSelectedDocId = document.forms[0].vdoc_id.value;
+			var url = 'dialogs/document_selection.aspx?o=' + object + '&o_id=' + object_id + '&p_id=' + profile_id + '&reload=' + reload + "&previousDocId=" + previousSelectedDocId;
+			window.radopen(url, radDialog);
+		}
+		catch(e)
+		{
+			ShowDocDialog(radDialog, object, object_id, profile_id, reload);
+		}
+	}
+	function ReloadPage(id) {
+        document.forms[0].vdoc_id.value = id;
+        if( id > 0 ) {
+		    document.getElementById('docAnchor').innerHTML = 'Documents Submitted' ;
+        } else {
+            document.getElementById('docAnchor').innerHTML = '[Select Documents]' ;
+        }
+	}
+	function MyCustomTextSource(obj)
+    {       
+        this.get_text = function() { return $get(obj).value; }       
+        this.set_text = function(text) { $get(obj).value = text; }
+    }
+	</script>
+    <link href="https://www.myinterfase.com/int/Skins/CSO/Menu.CSO_Nav.css" text="text/css" rel="stylesheet"><link href="https://www.myinterfase.com/int/Skins/CSO/Window.CSO.css" text="text/css" rel="stylesheet"></head><body><span id="cso_custom_validator"></span><link href="./Student - Self Referral_files/CSO.css" type="text/css" rel="stylesheet"><link href="./Student - Self Referral_files/WebResource.axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  
+	
+<form name="SelfReferral" method="post" action="./Student - Self Referral_files/Student - Self Referral.html" id="SelfReferral" enctype="multipart/form-data" onsubmit="document.getElementById(&#39;btnSubmit&#39;).style.visibility=&#39;hidden&#39;;return true;"><div id="RadWindowWrapper_DocPicker" class="RadWindow RadWindow_CSO rwNormalWindow rwTransparentWindow" unselectable="on" style="width: 420px; height: 350px; position: absolute; visibility: hidden; left: 630px; top: 306px; z-index: 3003; display: none;"><table cellspacing="0" cellpadding="0" class="rwTable" style="height: 350px;"><tbody><tr class="rwTitleRow"><td class="rwCorner rwTopLeft">&nbsp;</td><td class="rwTitlebar" style="cursor: move;"><div class="rwTopResize"><!-- / --></div><table align="left" cellspacing="0" cellpadding="0" class="rwTitlebarControls"><tbody><tr><td style="width: 20px;"><a class="rwIcon"></a></td><td><em unselectable="on" style="width: 1px;">Document Selection</em></td><td nowrap="" style="white-space: nowrap;"><ul class="rwControlButtons" style="width: 30px;"><li><a href="javascript:void(0);" class="rwCloseButton" title="Close"><span>Close</span></a></li></ul></td></tr></tbody></table></td><td class="rwCorner rwTopRight">&nbsp;</td></tr><tr class="rwContentRow"><td class="rwCorner rwBodyLeft">&nbsp;</td><td class="rwWindowContent rwExternalContent" valign="top"><iframe name="DocPicker" src="./Student - Self Referral_files/document_selection.html" frameborder="0" style="width: 100%; height: 100%; border: 0px;"></iframe></td><td class="rwCorner rwBodyRight">&nbsp;</td></tr><tr class="rwStatusbarRow" style="display: none;"><td class="rwCorner rwBodyLeft">&nbsp;</td><td class="rwStatusbar"><table align="left" cellspacing="0" cellpadding="0" style="width: 100%;"><tbody><tr><td style="width: 100%;"><input id="DocPicker_status" readonly="" unselectable="on" class=""><label for="DocPicker_status" style="display: none;">status label</label></td><td style="width: 15px;"><div></div></td></tr></tbody></table></td><td class="rwCorner rwBodyRight">&nbsp;</td></tr><tr class="rwFooterRow"><td class="rwCorner rwFooterLeft">&nbsp;</td><td class="rwFooterCenter">&nbsp;</td><td class="rwCorner rwFooterRight">&nbsp;</td></tr></tbody></table></div>
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" tabindex="0">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" tabindex="0">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTU2MjAzMTkyOBBkZBYCAgMPZBYGAgMPFCsAAhQrAAMPFgIeF0VuYWJsZUFqYXhTa2luUmVuZGVyaW5naGRkZBAWAWYWARQrAAMPFgIfAGhkZGQPFgFmFgEFcVRlbGVyaWsuV2ViLlVJLlJhZFdpbmRvdywgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMS4yLjgwMi40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0FgJmDxQrAAMPFgIfAGhkZGRkAgUPZBYCAgMPFgIeBWNsYXNzBRNSYWRNZW51X0NTT19OYXZfYmFyZAIHD2QWBAIHD2QWAgIBD2QWAmYPFgIeB29uY2xpY2sFQVNob3dEb2NEaWFsb2coJ0RvY1BpY2tlcicsJ3JlZmVycmFsJywgMCwgJycsIHRydWUpOyByZXR1cm4gZmFsc2U7ZAILD2QWAgIBD2QWAgIBDxBkZBYAZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAwURUmFkV2luZG93TWFuYWdlcjEFCURvY1BpY2tlcgUOTWVudXMxJHJhZG1lbnWYGckRadrd44qDvkIF1tG5ag95OEF6Da1h1Dd/WrUXog==" tabindex="0">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['SelfReferral'];
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Student - Self Referral_files/WebResource(1).axd" type="text/javascript"></script>
+
+
+<script src="./Student - Self Referral_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(2).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(3).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(4).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(5).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(6).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(7).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(8).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(9).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(10).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(11).axd" type="text/javascript"></script>
+<script src="./Student - Self Referral_files/ScriptResource(12).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'SelfReferral', [], [], [], 90, '');
+//]]>
+</script>
+
+<div id="RadWindowManager1" style="display:none;">
+	<!-- 2011.2.802.40 --><div id="DocPicker" style="display:none;">
+		<div id="DocPicker_C">
+
+		</div><input id="DocPicker_ClientState" name="DocPicker_ClientState" type="hidden" autocomplete="off" tabindex="0">
+	</div><div id="RadWindowManager1_alerttemplate" style="display:none;">
+		<div class="rwDialogPopup radalert">			
+			<div class="rwDialogText">
+			{1}				
+			</div>
+			
+			<div>
+				<a onclick="$find(&#39;{0}&#39;).close(true);" class="rwPopupButton" href="javascript:void(0);" tabindex="0">
+					<span class="rwOuterSpan">
+						<span class="rwInnerSpan">##LOC[OK]##</span>
+					</span>
+				</a>				
+			</div>
+		</div>
+		</div><div id="RadWindowManager1_prompttemplate" style="display:none;">
+		 <div class="rwDialogPopup radprompt">			
+			    <div class="rwDialogText">
+			    {1}				
+			    </div>		
+			    <div>
+				    <script type="text/javascript">
+				    function RadWindowprompt_detectenter(id, ev, input)
+				    {							
+					    if (!ev) ev = window.event;                
+					    if (ev.keyCode == 13)
+					    {															        
+					        var but = input.parentNode.parentNode.getElementsByTagName("A")[0];					        
+					        if (but)
+						    {							
+							    if (but.click) but.click();
+							    else if (but.onclick)
+							    {
+							        but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);							 
+							    }
+						    }
+					       return false;
+					    } 
+					    else return true;
+				    }	 
+				    </script>
+				    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter(&#39;{0}&#39;, event, this);" type="text" class="rwDialogInput" value="{2}" tabindex="0">
+			    </div>
+			    <div>
+				    <a onclick="$find(&#39;{0}&#39;).close(this.parentNode.parentNode.getElementsByTagName(&#39;input&#39;)[0].value);" class="rwPopupButton" href="javascript:void(0);" tabindex="0"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				    <a onclick="$find(&#39;{0}&#39;).close(null);" class="rwPopupButton" href="javascript:void(0);" tabindex="0"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			    </div>
+		    </div>				       
+		</div><div id="RadWindowManager1_confirmtemplate" style="display:none;">
+		<div class="rwDialogPopup radconfirm">			
+			<div class="rwDialogText">
+			{1}				
+			</div>						
+			<div>
+				<a onclick="$find(&#39;{0}&#39;).close(true);" class="rwPopupButton" href="javascript:void(0);" tabindex="0"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				<a onclick="$find(&#39;{0}&#39;).close(false);" class="rwPopupButton" href="javascript:void(0);" tabindex="0"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			</div>
+		</div>		
+		</div><input id="RadWindowManager1_ClientState" name="RadWindowManager1_ClientState" type="hidden" tabindex="0">
+</div>
+
+
+
+<script type="text/javascript" defer="defer">
+     try {
+        var BACON = BACON || {};
+        BACON.id = 'xxZG9DGV9XGOLWZS';
+        BACON.starttime = new Date().getTime();
+        (function (d, s) {
+            var js = d.createElement(s);
+            js.async = true; js.src = "//d2vig74li2resi.cloudfront.net/rum/bacon.min.js";
+            var s = d.getElementsByTagName(s)[0]; s.parentNode.insertBefore(js, s);
+        })(document, "script");
+    }
+    catch (e) { }
+</script>
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%;" align="center">
+    <tbody><tr>
+		<td id="Menus1_tdHeader" style="width:100%;">
+
+<!--BEGIN: Header html -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="56">
+  <tbody><tr> 
+	<td align="left" valign="top" bgcolor="#ffffff" background="./Student - Self Referral_files/utahr_bg.jpg">
+		<a href="http://www.uta.edu/hr/" target="_blank" tabindex="0"><img src="./Student - Self Referral_files/utahr_left.jpg" border="0"></a>
+	</td>
+	<td align="right" valign="top" bgcolor="#ffffff" background="./Student - Self Referral_files/utahr_bg.jpg">
+		<a href="http://www.uta.edu/hr/" target="_blank" tabindex="0"><img src="./Student - Self Referral_files/utahr_right.jpg" border="0"></a>		
+	</td>
+  </tr>
+</tbody></table>
+<!--END: Header html --></td>
+
+	</tr>
+	<tr>
+		<td id="Menus1_tdMenu" align="left" class="RadMenu_CSO_Nav_bar">
+			<div id="Menus1_radmenu" class="RadMenu RadMenu_CSO_Nav" enablebasestylesheet="false">
+	<ul class="rmRootGroup rmHorizontal">
+		<li class="rmItem rmFirst"><a href="https://www.myinterfase.com/utahr/home.aspx?clear=1" class="rmLink rmRootLink" tabindex="0"><span class="rmText">Home</span></a></li><li class="rmItem "><a href="https://www.myinterfase.com/utahr/home.aspx?clear=1" class="rmLink rmRootLink" tabindex="0"><span class="rmText rmExpandDown">My Account</span></a><div class="rmSlide">
+			<ul class="rmVertical rmGroup rmLevel1">
+				<li class="rmItem rmFirst"><a href="https://www.myinterfase.com/utahr/student.aspx?myprofile=1&clear=1" class="rmLink" tabindex="0"><span class="rmText">My Profile</span></a></li><li class="rmItem "><a href="https://www.myinterfase.com/utahr/document_mgr.aspx?clear=1" class="rmLink" tabindex="0"><span class="rmText">My Documents</span></a></li><li class="rmItem "><a href="https://www.myinterfase.com/utahr/StudentConnectionsMyConnections.aspx?clear=1" title="My Connections" class="rmLink" tabindex="0"><span class="rmText">My Connections</span></a></li><li class="rmItem rmLast"><a href="https://www.myinterfase.com/utahr/activity.aspx?clear=1" class="rmLink" tabindex="0"><span class="rmText">My Activity</span></a></li>
+			</ul>
+		</div></li><li class="rmItem "><a href="https://www.myinterfase.com/utahr/job_search.aspx?id=1&clear=1" class="rmLink rmRootLink" tabindex="0"><span class="rmText rmExpandDown">Jobs</span></a><div class="rmSlide">
+			<ul class="rmVertical rmGroup rmLevel1">
+				<li class="rmItem rmFirst rmLast"><a href="https://www.myinterfase.com/utahr/job_search.aspx?id=1&clear=1" class="rmLink" tabindex="0"><span class="rmText">On-Campus Job Search</span></a></li>
+			</ul>
+		</div></li><li class="rmItem "><a href="https://www.myinterfase.com/utahr/event_search.aspx?clear=1" class="rmLink rmRootLink" tabindex="0"><span class="rmText">Career Events</span></a></li><li class="rmItem rmLast"><a href="https://www.myinterfase.com/utahr/logout.aspx?clear=1" class="rmLink rmRootLink" tabindex="0"><span class="rmText">Sign Out</span></a></li>
+	</ul><input id="Menus1_radmenu_ClientState" name="Menus1_radmenu_ClientState" type="hidden" autocomplete="off" tabindex="0">
+</div>
+		</td>
+
+	</tr>
+	<tr id="Menus1_rCrumb" style="height:18px;" valign="top">
+	<td id="Menus1_cCrumb" style="padding-left:17px; padding-top:10px; padding-bottom:8px; background: url(&#39;images/topfade.gif&#39;); height:18px;"><a class="cookieCrumbs" href="javascript:__doPostBack('Menus1$ctl01','')" tabindex="0">Job Search</a><span class="cookieCrumbs" style="font-size:9px;">&nbsp;&gt;&nbsp;</span><a class="cookieCrumbs" href="javascript:__doPostBack('Menus1$ctl02','')" tabindex="0">Job Profile</a></td>
+</tr>
+
+</tbody></table>
+<br style="line-height:10px;">
+
+<input type="hidden" id="vdoc_id" name="vdoc_id" value="620110" tabindex="0">
+
+<span id="lblpnlSelfReferral" class="reg">Select the resume you wish to send to this department. <br></span>
+
+<p></p>
+					
+<table cellpadding="0" cellspacing="0" class="tblReg" style="width:600px;">
+	<tbody><tr>
+		<td class="sectionHeading">&nbsp;Self Referral</td>
+	</tr>
+	<tr>
+		<td align="left">
+			<table border="0" cellpadding="2" cellspacing="0" class="tFull">
+				<tbody><tr class="spacer">
+					<td colspan="2"></td>
+				</tr>
+				<tr id="trDocs">
+	<td class="fieldHead" align="right">
+                        Documents?</td>
+	<td class="field"><a href="javascript:void(0)" id="docAnchor" class="reglink" name="docAnchor" onclick="ShowDocDialog(&#39;DocPicker&#39;,&#39;referral&#39;, 0, &#39;&#39;, true); return false;" tabindex="0">Documents Submitted</a></td>
+</tr>
+
+				<!-- CSO::ReferralBase.StudentMessage Mode:Edit Location:Before --><tr><td class="fieldHead" align="right" valign="top">Student Message:</td><td class="field"><textarea style="vertical-align:top" name="lblStudentMessageEdit" id="lblStudentMessageEdit" class="smalleditArea" tabindex="0"></textarea></td></tr><!-- CSO::ReferralBase.StudentMessage Mode:Edit Location:After -->
+				
+				<tr class="spacer">
+					<td colspan="2"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" name="btnSubmit" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btnSubmit" class="supersmallbtn" tabindex="0">
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+
+
+<script type="text/javascript">document.title='Student - '+document.title; </script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":36,"clientStateFieldID":"DocPicker_ClientState","formID":"SelfReferral","height":"350px","iconUrl":"","minimizeIconUrl":"","modal":true,"name":"DocPicker","skin":"CSO","title":"Documents?","visibleStatusbar":false,"width":"420px"}, null, null, $get("DocPicker"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"clientStateFieldID":"RadWindowManager1_ClientState","formID":"SelfReferral","iconUrl":"","minimizeIconUrl":"","name":"RadWindowManager1","skin":"CSO","visibleStatusbar":false,"windowControls":"['DocPicker']"}, null, {"child":"DocPicker"}, $get("RadWindowManager1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_skin":"CSO_Nav","attributes":{"EnableBaseStylesheet":"false"},"clientStateFieldID":"Menus1_radmenu_ClientState","collapseAnimation":"{\"duration\":450}","collapseDelay":2000,"expandAnimation":"{\"duration\":450}","itemData":[{"navigateUrl":"/utahr/home.aspx?clear=1"},{"groupSettings":{"flow":0,"offsetY":2},"items":[{"navigateUrl":"/utahr/student.aspx?myprofile=1&clear=1"},{"navigateUrl":"/utahr/document_mgr.aspx?clear=1"},{"navigateUrl":"/utahr/StudentConnectionsMyConnections.aspx?clear=1"},{"navigateUrl":"/utahr/activity.aspx?clear=1"}],"navigateUrl":"/utahr/home.aspx?clear=1"},{"groupSettings":{"flow":0,"offsetY":2},"items":[{"navigateUrl":"/utahr/job_search.aspx?id=1&clear=1"}],"navigateUrl":"/utahr/job_search.aspx?id=1&clear=1"},{"navigateUrl":"/utahr/event_search.aspx?clear=1"},{"navigateUrl":"/utahr/logout.aspx?clear=1"}]}, null, null, $get("Menus1_radmenu"));
+});
+//]]>
+</script>
+</form>
+	
+
+
+</body></html>

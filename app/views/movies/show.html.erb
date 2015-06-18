@@ -1,0 +1,21 @@
+<p>
+  <strong>Name of the dish:</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @movie.genre %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @movie.descp %>
+</p>
+<h1>Comments</h1>
+<%= render @movie.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

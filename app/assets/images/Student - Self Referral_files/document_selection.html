@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0116)https://www.myinterfase.com/utahr/dialogs/document_selection.aspx?o=referral&o_id=0&p_id=&reload=true&previousDocId= -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Document Selection
+</title>
+        <script type="text/javascript">
+        var selectionSaved = false;
+	    //This code is used to provide a reference to the radwindow "wrapper"
+	    function GetRadWindow()
+	    {
+		    var oWindow = null;
+		    if (window.radWindow) oWindow = window.radWindow;
+		    else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
+		    return oWindow;
+	    }
+	    function Cancel_Clicked()
+	    {
+            var oWindow = GetRadWindow();
+            var openerUrl = oWindow.BrowserWindow.location.href.toLowerCase();
+            var reloadSelection = openerUrl.indexOf("selfreferral.aspx") >-1;
+            if( selectionSaved && true == true ) { 
+                oWindow.BrowserWindow.ReloadPage(); 
+            } else if (reloadSelection) {
+                var id = 620110;
+                if( id == 0 && '' != '' ) {
+                    id = parseInt('');
+                }
+                oWindow.BrowserWindow.ReloadPage(id); 
+            }
+		    oWindow.Close();
+	    }
+	    function CancelVdocDel_Clicked()
+	    {
+            var oWindow = GetRadWindow();
+		    oWindow.BrowserWindow.ReloadPageWithNoVDoc();
+		    oWindow.Close();
+	    }
+	    function CancelTag_Clicked(id)
+	    {
+            var oWindow = GetRadWindow();
+		    if( selectionSaved && true == true ) { oWindow.BrowserWindow.ReloadPage(id); }
+		    oWindow.Close();
+	    }
+	    function ConfigureDialog()
+	    {
+				
+		    window.setTimeout(function()
+			{
+					//Get a reference to the radWindow wrapper
+					var oWindow = GetRadWindow();
+					
+					//Obtain the argument 
+					var oArg = oWindow.Argument;
+					
+					//Use the argument
+					
+				},100);
+			}
+		function InvalidSession()
+		{
+			GetRadWindow().BrowserWindow.location.reload();
+		}
+	    </script>
+	 <link href="CSO.css" type="text/css" rel="stylesheet"></head>
+  <body onload="ConfigureDialog()">
+	
+    <form name="Form1" method="post" action="document_selection.html" id="Form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE0NDAwOTA5ODQQZGQWAgIDD2QWBAIBDw8WAh4EVGV4dAV1PHNjcmlwdCB0eXBlPSd0ZXh0L2phdmFzY3JpcHQnPnNlbGVjdGlvblNhdmVkID0gdHJ1ZTsgd2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uKCl7Q2FuY2VsVGFnX0NsaWNrZWQoNjIwMTEwKX07PC9zY3JpcHQ+ZGQCAw9kFgICCg8WAh4LXyFJdGVtQ291bnQCARYCZg9kFgICAQ9kFgRmD2QWAmYPFQIePGZvbnQgY2xhc3M9J3JlcVRleHQnPio8L2ZvbnQ+G1Jlc3VtZXMgd2l0aCBDbGFzcyBTY2hlZHVsZWQCAQ9kFgYCAQ8QDxYCHgtfIURhdGFCb3VuZGcWAh4LY2F0ZWdvcnlfaWQFATEPFgRmAgECAgIDFgQQZWVnEAUGUmVzdW1lBQU3OTA0MWcQBQdyZXN1bWUyBQU4MDI3MGcQBQpOZXcgUmVzdW1lBQU5MDUzN2dkZAIDDxAPFgIfAmdkZBYAZAIFDw8WAh4HRW5hYmxlZGdkZGSw252Mao20WCR9uE+LrFO7ufueiKsmNZzDX0LtokFa8g==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="WebResource(1).axd" type="text/javascript"></script>
+
+	<span id="lblScript"><script type="text/javascript">selectionSaved = true; window.onload = function(){CancelTag_Clicked(620110)};</script></span>
+	
+	<span id="lblpnlDocs" class="reg">Select the documents below you wish to submit.&nbsp; Leave the category blank if you do not wish to select a document from that category.&nbsp; <br><br>Any category marked with <font color="#000000">*</font> is required and must have a selection.</span>
+	<br>
+	<span id="lblError" class="reqText"></span>
+	<br>
+	<table border="0" cellpadding="0" cellspacing="0" id="tblCat" align="center">
+		<tbody><tr>
+			<td style="height:20px;width:100%;" class="fieldHeadNoWidth">
+                Select Documents <span id="lblTitle"></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:100%;">
+				<table cellpadding="2" cellspacing="0" border="0" style="width:100%;">
+					<tbody><tr><td colspan="2" style="font-size: 6px;">&nbsp;</td></tr>
+					<tr>
+						<td class="fieldHeadNoWidth" style="width:40%;" align="right">
+                            Category&nbsp;&nbsp;</td>
+						<td class="fieldHeadNoWidth" style="width:60%;" align="left">
+                            Document</td>
+					</tr>
+					
+							<tr id="rptCategory_ctl00_Tr1">
+	<td class="fieldHeadNoWidth" align="right" style="width:40%;" nowrap="nowrap" valign="top">&nbsp;&nbsp;<font class="reqText">*</font>Resumes with Class Schedule:&nbsp;&nbsp;</td>
+	<td align="left" style="width:60%;" valign="top">
+									<select name="rptCategory$ctl00$ddlDoc" id="rptCategory_ctl00_ddlDoc" class="smalleditList" category_id="1">
+		<option value=""></option>
+		<option selected="selected" value="79041">Resume</option>
+		<option value="80270">resume2</option>
+		<option value="90537">New Resume</option>
+
+	</select>
+									&nbsp;&nbsp;
+									&nbsp;
+									&nbsp;
+								</td>
+</tr>
+									
+						
+					<tr><td colspan="2" style="font-size: 8px;">&nbsp;</td></tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" name="btnSave" value="Save" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnSave&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btnSave" class="supersmallbtn">
+							&nbsp;<input name="btnCancel" type="button" id="btnCancel" class="supersmallbtn" onclick="Cancel_Clicked();" value="Close">
+						</td>
+					</tr>
+					<tr><td colspan="2" style="font-size: 10px;">&nbsp;</td></tr>
+				</tbody></table>
+			</td>
+		</tr>
+	</tbody></table>
+	
+	</form>
+	
+  
+</body></html>
